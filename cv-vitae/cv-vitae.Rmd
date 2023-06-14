@@ -1,16 +1,16 @@
 ---
-name: Shazia Ruybal Pesántez
+name: Nigel Kurgan
 qualifications: PhD
-position: "Postdoctoral Scientist"
-address: "Melbourne, Australia"
-# profilepic: "./img/headshot_2020.png"
-www: shaziaruybal.com
-email: "ruybal.s@wehi.edu.au"
-twitter: DrShaziaRuybal
-github: shaziaruybal
-orcid: "0000-0002-0495-179X"
-googlescholar: "E7dY4foAAAAJ"
-aboutme: "Genomic epidemiologist with expertise in population genetics, bioinformatics, and epidemiology. I'm interested in combining these approaches to population-based studies of infectious diseases, particularly malaria, and more recently COVID-19. My work has involved international collaborations in West Africa, Asia-Pacific and the Americas, and spans applied epidemiology and capacity-building in the field, to genetics and genomics in the lab, to the downstream analytics using advanced approaches and digital tools. I am an avid `R` user for data processing, visualization, communication, reports/dashboards, shiny web applications and am passionate about open science and the development of digital tools for research."
+position: "Postdoctoral Research Fellow"
+address: "Novo Nordisk Foundation Center for Basic Metabolic Research"
+# profilepic: "./img/headshot.jpg"
+www: cbmr.ku.dk/research/research-groups/deshmukh-group/
+email: "nigel.kurgan@sund.ku.dk"
+twitter: nigelkurgan
+github: nigelkurgan
+orcid: "0000-0002-5011-0297"
+googlescholar: "PdiE1IwAAAAJ"
+aboutme: "Exercise physiologist with expertise in metabolism, proteomics, and bioinformatics. I'm interested in combining these approaches to better understanding interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, communication, reports/dashboards, shiny web applications and am passionate about open science and the development of digital tools for research."
 headcolor: 414141
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
@@ -27,6 +27,8 @@ library(tidyverse)
 library(here)
 library(vitae)
 library(kableExtra)
+library(tinytex)
+
 ```
 
 ```{r functions}
@@ -46,16 +48,6 @@ readExcelSheets <- function(filename){
 ```
 
 ```{r load data, include=FALSE}
-# appointments <- read_csv(here("data", "appointments.csv"))
-# education <- read_csv(here("data", "education.csv"))
-# research <- read_csv(here("data", "research_experience.csv"))
-# teaching <- read_csv(here("data", "teaching_supervision.csv"))
-# awards <- read_csv(here("data", "awards.csv"))
-# leadership <- read_csv(here("data", "leadership.csv"))
-# presentations <- read_csv(here("data", "presentations.csv"))
-# training <- read_csv(here("data", "training.csv"))
-# skills <- read_csv(here("data", "skills_table.csv"))
-# tools <- read_csv(here("data", "digital_tools.csv"))
 
 readExcelSheets(here::here("data", "cv_data.xlsx"))
 ```
