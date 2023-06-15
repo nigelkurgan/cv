@@ -3,14 +3,14 @@ name: Nigel Kurgan
 qualifications: PhD
 position: "Postdoctoral Research Fellow"
 address: "Novo Nordisk Foundation Center for Basic Metabolic Research"
-# profilepic: "./img/headshot.jpg"
+#profilepic: "./img/headshot.jpg"
 www: cbmr.ku.dk/research/research-groups/deshmukh-group/
 email: "nigel.kurgan@sund.ku.dk"
 twitter: nigelkurgan
 github: nigelkurgan
 orcid: "0000-0002-5011-0297"
-googlescholar: "PdiE1IwAAAAJ"
-aboutme: "Exercise physiologist with expertise in metabolism, proteomics, and bioinformatics. I'm interested in combining these approaches to better understanding interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, communication, reports/dashboards, shiny web applications and am passionate about open science and the development of digital tools for research."
+googlescholar: "Daqi2XQAAAAJ"
+aboutme: "Exercise physiologist with expertise in metabolic assays, proteomics, and bioinformatics. I'm interested in combining these approaches to better understand interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, communication, reports/dashboards, and am passionate about open and reproducible science."
 headcolor: 414141
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
