@@ -10,7 +10,7 @@ twitter: nigelkurgan
 github: nigelkurgan
 orcid: "0000-0002-5011-0297"
 googlescholar: "Daqi2XQAAAAJ"
-aboutme: "Exercise physiologist with expertise in metabolic assays, proteomics, and bioinformatics. I'm interested in combining these approaches to better understand interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, communication, reports/dashboards, and am passionate about open and reproducible science."
+aboutme: "Exercise physiologist with expertise in metabolism, proteomics, and bioinformatics. I'm interested in combining these approaches to better understand interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, and communication/reports, and am passionate about open and reproducible science."
 headcolor: 414141
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
@@ -27,8 +27,6 @@ library(tidyverse)
 library(here)
 library(vitae)
 library(kableExtra)
-library(tinytex)
-
 ```
 
 ```{r functions}
@@ -48,8 +46,18 @@ readExcelSheets <- function(filename){
 ```
 
 ```{r load data, include=FALSE}
+# appointments <- read_csv(here("data", "appointments.csv"))
+# education <- read_csv(here("data", "education.csv"))
+# research <- read_csv(here("data", "research_experience.csv"))
+# teaching <- read_csv(here("data", "teaching_supervision.csv"))
+# awards <- read_csv(here("data", "awards.csv"))
+# leadership <- read_csv(here("data", "leadership.csv"))
+# presentations <- read_csv(here("data", "presentations.csv"))
+# training <- read_csv(here("data", "training.csv"))
+# skills <- read_csv(here("data", "skills_table.csv"))
+# tools <- read_csv(here("data", "digital_tools.csv"))
 
-readExcelSheets(here::here("data", "cv_data.xlsx"))
+readExcelSheets(here::here("data", "cv_data_hers.xlsx"))
 ```
 
 ```{r eval=FALSE, include=FALSE}
@@ -91,11 +99,10 @@ research %>%
                    .protect = FALSE)
 ```
 
-
-<!-- \newpage -->
-# Teaching
+\newpage
+# Teaching and Supervision
 \footnotesize
-In addition to the formal roles listed below, I also actively curate teaching resources/presentations for bioinformatic pipelines and metabolics assays. 
+In addition to the formal supervisory roles listed below, I am also actively involved in the supervision and mentorship of junior lab members.
 
 \normalsize
 ```{r}
@@ -108,18 +115,11 @@ teaching %>%
                    .protect = FALSE)
 ```
 
-# Supervision
-```{r}
-supervision %>%
-  detailed_entries(what = institution,
-                   when = dates, #glue::glue("{start_date}--{end_date}"),
-                   with = role,
-                   where = where,
-                   why = details,
-                   .protect = FALSE)
-```
-
 # Leadership, Service & Community Engagement
+\footnotesize
+*Manuscript peer-review*: Computational and Structural Biotechnology Journal (2), Archives of Physiology and Biochemistry (1), Physiological Reports (1).
+
+\normalsize
 ```{r}
 leadership %>%
   detailed_entries(what = glue::glue("\\textbf{<role>}: <institution> (<where>)",
@@ -244,11 +244,11 @@ Rorick, M. M., Artzy‐Randrup, Y., **Ruybal‐Pesántez, S.**, Tiedje, K. E., R
 \setlength{\leftskip}{0cm}
 
 \newpage
-# Digital tools
+# Conferences
 \footnotesize
 For other non-traditional academic contributions, I have also developed several `R Shiny` web applications to support COVID-19 surveillance efforts and `R flexdashboard` for real-time updates and data visualization of both programmatic/operational aspects and preliminary epidemiological trends as part of the coordination of population-based field studies. [Check out my GitHub \faExternalLink](https://github.com/shaziaruybal)
 ```{r}
-tools %>%
+conferences %>%
   detailed_entries(what = authors,
                    when = year,
                    with = tool,
@@ -263,8 +263,7 @@ tools %>%
 <!-- \newpage -->
 # Selected presentations
 \footnotesize
-Conference Presentations - I have participated in oral and poster presentations at 18 conferences (13 international, 5 national).
-
+I have participated in oral and poster presentations at 18 conferences (13 international, 5 national; 6 travel awards). 
 ```{r}
 presentations <- presentations %>% filter(include == "yes")
 
@@ -274,6 +273,5 @@ presentations %>%
                 .protect = FALSE)
 ```
 
-
 # About me
-Hi  
+I am half Ecuadorian and half American, born in The Netherlands, I am fluent in English and Spanish (beginner French and Dutch), and grew up overseas in several countries in Africa and Latin America: Ecuador, Tanzania, Guatemala, and Honduras. I am an Australian Permanent Resident and have been living in Melbourne, Australia since 2014 when I moved to pursue my PhD. Apart from my research, I am highly committed to furthering health and development initiatives, particularly in my home country of Ecuador. From early 2016 until the COVID-19 pandemic, I was CEO and co-founder of the The Artisan Project, a social enterprise that worked hand in hand with talented indigenous artisans in Ecuador. We used fashion as a tool to create income-generating opportunities, particularly for indigenous women, and impulse social impact and innovation. During the COVID-19 pandemic I was actively involved as a consultant epidemiologist providing analyses on case and testing trends, importation dynamics, Reff calculations, among others, to the Ecuadorian National COVID-19 Emergency Response committee - most of this work remains unpublished due to competing political agendas and turnover of public health officials.  
