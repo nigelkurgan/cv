@@ -1,0 +1,63 @@
+---
+name: Nigel Kurgan
+qualifications: PhD
+position: "Postdoctoral Research Fellow"
+address: "Novo Nordisk Foundation Center for Basic Metabolic Research"
+#profilepic: "./img/headshot.jpg"
+#www: cbmr.ku.dk/research/research-groups/deshmukh-group/
+email: "nigel.kurgan@sund.ku.dk"
+twitter: nigelkurgan
+github: nigelkurgan
+orcid: "0000-0002-5011-0297"
+googlescholar: "Daqi2XQAAAAJ"
+aboutme: "Exercise biologist with expertise in metabolism, proteomics, and bioinformatics. I'm interested in combining these approaches to better understand interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, and communication/reports, and am passionate about open and reproducible science."
+headcolor: 414141
+date: "`r format(Sys.time(), '%B %Y')`"
+output: 
+  vitae::awesomecv:
+    page_total: true
+    keep_tex: true
+always_allow_html: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+library(tidyverse)
+library(here)
+library(vitae)
+library(kableExtra)
+```
+
+```{r functions}
+readExcelSheets <- function(filename){
+  # read all sheets in .xlsx 
+  all <- readxl::excel_sheets(filename)
+  
+  # import each sheet into a list using readxl::read_excel
+  list <- lapply(all, function(x) readxl::read_excel(filename, sheet = x))
+  
+  # save sheet name for each sheet (list)
+  names(list) <- all
+  
+  # breaks up list and creates a dataframe for each sheet with df names matching sheet names
+  list2env(list, envir = .GlobalEnv)
+}
+```
+
+```{r load data, include=FALSE}
+readExcelSheets(here::here("data", "nigel_kurgan_cv_data.xlsx"))
+```
+
+# List of Publications
+**First Author Publications**
+```{r}
+bibliography_entries(here("data", "first_author.bib")) 
+```
+
+**Co-Author Publications**
+```{r}
+bibliography_entries(here("data", "co_author.bib")) 
+```
+
+

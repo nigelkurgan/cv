@@ -46,7 +46,7 @@ readExcelSheets <- function(filename){
 ```
 
 ```{r load data, include=FALSE}
-readExcelSheets(here::here("data", "cv_data_hers.xlsx"))
+readExcelSheets(here::here("data", "nigel_kurgan_cv_data.xlsx"))
 ```
 
 ```{r eval=FALSE, include=FALSE}
