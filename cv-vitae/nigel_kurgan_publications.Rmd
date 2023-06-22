@@ -10,7 +10,7 @@ twitter: nigelkurgan
 github: nigelkurgan
 orcid: "0000-0002-5011-0297"
 googlescholar: "Daqi2XQAAAAJ"
-aboutme: "Exercise biologist with expertise in metabolism, proteomics, and bioinformatics. I'm interested in combining these approaches to better understand interorgan communication mediated by secreted proteins during exercise and in individuals with metabolic diseases. I am an avid `R` user for data processing, visualization, and communication/reports, and am passionate about open and reproducible science."
+
 headcolor: 414141
 date: "`r format(Sys.time(), '%B %Y')`"
 output: 
